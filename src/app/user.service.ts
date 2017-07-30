@@ -6,8 +6,8 @@ import { UserInfo } from './user';
 
 @Injectable()
 export class UserService {
-  private registerUrl = 'http://127.0.0.1:9527/register';
-  private loginUrl = 'http://127.0.0.1:9527/login'
+  private registerUrl = 'http://xiaofeixu.cn:9527/register';
+  private loginUrl = 'http://xiaofeixu.cn:9527/login'
   private headers = new Headers({ 'Content-Type': 'text/json' });
   constructor(private http: Http) { };
 

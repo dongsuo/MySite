@@ -12,7 +12,7 @@ import {UserService} from '../../user.service';
 
 
 export class RegisterComponent implements OnInit {
-
+  title="注册";
 	onSubmit(email,password) {
     	// console.log(this.userInfo)
     	this.userService.registerUser(this.userInfo)
@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
     		console.log(res)
     	})
   	}
-  userInfo = new UserInfo('','')
+  userInfo = new UserInfo('','','');
 
   constructor(private userService: UserService) {
   	// console.log('userInfo.email');

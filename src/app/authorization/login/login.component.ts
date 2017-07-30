@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     		console.log(res)
     	})
   }
-  userInfo = new UserInfo('','');
+  userInfo = new UserInfo('','','');
 
   constructor(private userService: UserService) { }
 

@@ -3,5 +3,7 @@
 	<ul class="menu-list" [class.hidden]="hide" (mouseover)="showMenu('ul')" (mouseout)="hideMenu('ul')">
 		<li *ngFor="let item of menuList">
 			<a href="{{item.url}}" target="{{item.target}}">{{item.name}}</a>
+
 		</li>
+		<li><a routerLink="/lab">Laboratory</a></li>
 	</ul>

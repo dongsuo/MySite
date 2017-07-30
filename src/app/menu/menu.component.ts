@@ -10,7 +10,6 @@ export class MenuComponent implements OnInit {
 	menuList = [
 		{ name: 'Home', url: '' ,target:''},
 		{ name: 'Blog', url: 'http://blog.xiaofeixu.cn',target:'_blank' },
-		{ name: 'Lab', url: '/lab',target:'' },
 		{ name: 'AboutMe', url: 'http://blog.xiaofeixu.cn/about/',target:'_blank' }];
 	classArray = ['material-icons'];
 	showMenu(str: String): void {
