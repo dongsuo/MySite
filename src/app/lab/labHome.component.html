@@ -1,0 +1,14 @@
+<md-toolbar style="background:#3f51b5;color:#fff;text-align:center">
+<h3 style="width:100%">{{title}}</h3>
+</md-toolbar>
+
+<ul>
+  <li *ngFor="let item of links">
+    <a href="{{item.link}}" style="color:#000">{{item.title}}</a>
+  </li>
+</ul>
+<md-list>
+    <md-list-item *ngFor="let item of links">
+        <a href="{{item.link}}">{{item.title}}</a>
+    </md-list-item>
+</md-list>

@@ -1,0 +1,7 @@
+	<!-- <i class="material-icons">menu</i> -->
+	<i [ngClass]=classArray (mouseenter)="showMenu('menu')" (mouseout)="hideMenu('menu')" >&#xE5D2;</i>
+	<ul class="menu-list" [class.hidden]="hide" (mouseover)="showMenu('ul')" (mouseout)="hideMenu('ul')">
+		<li *ngFor="let item of menuList">
+			<a href="{{item.url}}" target="{{item.target}}">{{item.name}}</a>
+		</li>
+	</ul>
