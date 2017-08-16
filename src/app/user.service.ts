@@ -6,18 +6,17 @@ import { UserInfo } from './user';
 
 @Injectable()
 export class UserService {
-  private registerUrl = 'http://localhost:9527/register';
-  private loginUrl = 'http://localhost:9527/login'
+  private registerUrl = 'http://xiaofeixu.cn:9527/register';
+  private loginUrl = 'http://xiaofeixu.cn:9527/login'
   private headers = new Headers({ 'Content-Type': 'text/json' });
   constructor(private http: Http) { };
 
-  registerUser(userInfo) {
-    console.log(JSON.stringify(userInfo))
+  registerUser(userInfo):Promise<UserInfo> {
     return this.http.post(this.registerUrl, userInfo)
       .toPromise()
       // .map(response => response.json().data as object);
-      .then(response => response.json() as object)
-      .catch(err => { console.log('err' + err) });
+      .then(response => response.json() as UserInfo)
+
     // return Promise.resolve({result:true});
   }
 

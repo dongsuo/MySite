@@ -1,9 +1,16 @@
-	<!-- <i class="material-icons">menu</i> -->
-	<i [ngClass]=classArray (mouseenter)="showMenu('menu')" (mouseout)="hideMenu('menu')" >&#xE5D2;</i>
-	<ul class="menu-list" [class.hidden]="hide" (mouseover)="showMenu('ul')" (mouseout)="hideMenu('ul')">
-		<li *ngFor="let item of menuList">
-			<a href="{{item.url}}" target="{{item.target}}">{{item.name}}</a>
+<md-sidenav-container class="sidenav-container">
+  <md-sidenav mode="push" #sidenav class="sidenav">
+      <md-nav-list md-nav-list *ngFor="let item of menuList">
+        <a href="{{item.url}}" target="{{item.target}}">{{item.name}}</a>
 
-		</li>
-		<li><a routerLink="/lab">Laboratory</a></li>
-	</ul>
+      </md-nav-list>
+      <md-nav-list><a routerLink="/lab">Laboratory</a></md-nav-list>
+  </md-sidenav>
+  <!-- <i class="material-icons">menu</i> -->
+
+
+  <div class="sidenav-content">
+			<i [ngClass]=classArray (click)="sidenav.open()">&#xE5D2;</i>
+  </div>
+</md-sidenav-container>
+
