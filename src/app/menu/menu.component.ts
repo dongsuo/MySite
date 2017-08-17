@@ -12,13 +12,14 @@ export class MenuComponent implements OnInit {
 		{ name: 'Blog', url: 'http://blog.xiaofeixu.cn',target:'_blank' },
 		{ name: 'AboutMe', url: 'http://blog.xiaofeixu.cn/about/',target:'_blank' }];
 	classArray = ['material-icons'];
-	showMenu(str: String): void {
-		this.hide = false;
-		this.classArray.push('hoverIcon')
+	sidenavClass = ['sidenav-container-close']
+	handleOpen() {
+		console.log('1')
+		this.sidenavClass = ['sidenav-container']
 	}
-	hideMenu(str: String): void {
-		this.hide = true;
-		this.classArray = ['material-icons']
+	handleClose(){
+		console.log('1')
+		this.sidenavClass = ['sidenav-container-close']
 	}
 	constructor() {
 	}

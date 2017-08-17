@@ -42,7 +42,7 @@ const routers: Routes = [
     MaterialModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routers, {
-      enableTracing: true
+      enableTracing: false
     })
   ],
   providers: [],

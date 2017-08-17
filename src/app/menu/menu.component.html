@@ -1,5 +1,5 @@
-<md-sidenav-container class="sidenav-container">
-  <md-sidenav mode="push" #sidenav class="sidenav">
+<md-sidenav-container [ngClass]=sidenavClass>
+  <md-sidenav mode="push" #sidenav class="sidenav" (open-start)="handleOpen()" (close-start)="handleClose()">
       <md-nav-list md-nav-list *ngFor="let item of menuList">
         <a href="{{item.url}}" target="{{item.target}}">{{item.name}}</a>
 
@@ -9,7 +9,7 @@
   <!-- <i class="material-icons">menu</i> -->
 
 
-  <div class="sidenav-content">
+  <div class="sidenav-btn">
 			<i [ngClass]=classArray (click)="sidenav.open()">&#xE5D2;</i>
   </div>
 </md-sidenav-container>

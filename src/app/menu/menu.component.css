@@ -12,24 +12,32 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 0;
-  background:rgba(255, 255, 255, 0.00);
+  background:rgba(255, 255, 255,0.00);
+  opacity: 0.8;
+  z-index: 9999;
 }
-
-.sidenav-content {
+.sidenav-container-close{
   position: absolute;
-  z-index: 99;
+  width: 100%;
+  height: 100%;
+  background:rgba(255, 255, 255,0.00);
+  opacity: 0.8;
+}
+.sidenav-btn {
+  position: absolute;
   display: flex;
   height: 100%;
+  z-index: 999;
   background:rgba(255, 255, 255, 0.00);
 }
 
 .sidenav{
   position: absolute;
-  z-index: 199;
   background:rgba(255, 255, 255, 0.00);
   padding: 20px;
   width: 200px;
+  opacity: 1;
+
 }
 
 md-nav-list{
