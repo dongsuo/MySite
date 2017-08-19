@@ -1,12 +1,7 @@
 <md-grid-list cols="5" rowHeight="60px">
-  <md-grid-tile colspan='2' rowspan='6'>
-    <div>
-      <h2>WARNING！！！！</h2>
-      Hello,这是一个测试项目，本项目不会收集你的个人信息，但也不能保证你所输入信息的安全。 所以，请不要输入你的真实信息。
-    </div>
-  </md-grid-tile>
-  <md-grid-tile colspan='3' rowspan='6'>
-    <form #loginForm="ngForm">
+  <md-grid-tile rowspan='1'></md-grid-tile>
+  <md-grid-tile colspan='5' rowspan='4'>
+    <form #loginForm="ngForm" style="margin: 0 auto;">
       <md-input-container>
         <input mdInput [(ngModel)]="userInfo.email" name="email" required placeholder="请输入邮箱" type="email">
         <md-hint>Note:邮箱可用于找回密码</md-hint>

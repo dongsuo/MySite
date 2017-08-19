@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   templateUrl:'./labHome.component.html',
   styles:[
+    'h3 {width:100%;}',
+    'a {color:#000}',
+    'md-toolbar {background:#3f51b5;color:#fff;text-align:center}',
     'md-card {width:50%;margin: 0 auto;margin-top:20px;position:relative;z-index:1;}',
     'md-card p {color:#6f6f6f;font-size:0.8rem;}'
   ]

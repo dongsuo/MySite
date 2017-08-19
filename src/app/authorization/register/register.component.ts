@@ -5,7 +5,11 @@ import {UserService} from '../../user.service';
 
 @Component({
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
+  styles:[
+    'md-grid-tile form{ min-width: 300px;width: 25%;}',
+    'md-input-container{width:100%;}',
+    'button {width:100%;}'
+  ],
   providers: [UserService]
 })
 
