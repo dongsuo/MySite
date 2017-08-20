@@ -14,11 +14,11 @@ export class MenuComponent implements OnInit {
 	classArray = ['material-icons'];
 	sidenavClass = ['sidenav-container-close']
 	handleOpen() {
-		console.log('1')
+		// console.log('1')
 		this.sidenavClass = ['sidenav-container']
 	}
 	handleClose(){
-		console.log('1')
+		// console.log('1')
 		this.sidenavClass = ['sidenav-container-close']
 	}
 	constructor() {

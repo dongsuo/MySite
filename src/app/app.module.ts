@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 
 import { AuthorizationModule } from "./authorization/authorization.module";
+import { ChatRoomModule } from "./chat-room/chat-room.module";
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -23,6 +24,7 @@ import { AppRoutingModule } from "./app-router.module";
     MaterialModule,
     BrowserAnimationsModule,
     AuthorizationModule,
+    ChatRoomModule,
     AppRoutingModule
   ],
   providers: [],
