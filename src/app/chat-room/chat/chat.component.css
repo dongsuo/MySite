@@ -1,26 +1,21 @@
-h2,h3,ul,li {
+h2,h3,ul,li,p,div{
   width: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a {
   color: #000
 }
 
+
 md-toolbar {
   background: #3f51b5;
   color: #fff;
-  text-align: center
-}
-
-input[type="submit"] {
-  width: 100px;
-  height: 30px;
-  font-size: 1.2rem;
-  display: block;
-  border-radius: 5px;
-  border: 1px solid #fff;
+  text-align: center;
+  width: 750px;
+  height: 65px;
 }
 
 #pop-ups {
@@ -32,52 +27,25 @@ input[type="submit"] {
   background: rgba(180, 180, 180, 0.7);
 }
 
-#pop-ups .change-name-message {
-  padding: 50px 0;
-  line-height: 1.2rem;
-  background: #fff;
-  width: 300px;
-  height: 200px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -200px;
-  margin-top: -100px;
-  text-align: center;
-}
-
-#pop-ups .change-name-message input[type="text"] {
-  width: 80%;
-  margin: 0 auto;
-  display: block;
-  height: 30px;
-}
-
-#pop-ups .change-name-message input[type="submit"] {
-  margin: 0 auto;
-  display: block;
-  margin-top: 15px;
-}
 
 .container {
+  position: relative;
   width: 950px;
   height: 100%;
-  border: 1px solid #ccc;
-  background: #58B2DC;
   margin: 0 auto;
-  /*padding-bottom: 10px;*/
 }
 
 .left-wraper {
   float: left;
   width: 250px;
-  border-right: 1px dashed #fff;
   height: 100%;
   color: #ccc;
   background: #444;
+  text-align: center;
 }
 
 .left-wraper .name {
+  text-align: left;
   height: 2rem;
   font-size: 1.2rem;
   text-indent: 1rem;
@@ -101,14 +69,25 @@ input[type="submit"] {
   font-size: 1.2rem;
 }
 
-.left-wraper ul li {
-  list-style-type: none;
-  height: 2.5rem;
-  line-height: 2.5rem;
-  text-indent: 1rem;
-  border: 1px solid #ccc;
-  border-left: none;
-  border-right: none;
+.left-wraper button{
+  margin: 0 auto;
+  /* width: 100%; */
+  color:#000;
+  margin-top: 10px;
+}
+
+md-card{
+  border-bottom: 1px solid #b5b5b5;
+  background: #f6f6f6;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 10px;
+  cursor: pointer;
+  text-align: left;
+}
+
+div.active md-card{
+  background: #c1c1c1;
 }
 
 .message-window {
@@ -116,6 +95,8 @@ input[type="submit"] {
   position: relative;
   margin-left: 250px;
   background: #eee;
+  /* padding-bottom: 150px; */
+  /* overflow-y: scroll; */
 }
 
 .message-window h2 {
@@ -127,21 +108,45 @@ input[type="submit"] {
 }
 
 .message-window .message-list {
+  width: 750px;
+  height: 100%;
+  padding:0 10px;
+  padding-bottom: 215px;
+  margin-bottom: 150px;
+  border-right: 1px solid #b5b5b5;
   overflow-y: scroll;
 }
 
-.message-window textarea {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+.message-window .message-list p{
+  margin:5px 5px;
 }
 
-.message-window input {
+.message-list .self{
+  text-align:right;
+}
+
+.message-window button {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   right: 20px;
 }
 
-#message-content{
-  height: 200px;
+#message-send{
+  width: 748px;
+  position: fixed;
+  font-size:16px;
+  height: 150px;
+  bottom: 0;
 }
+
+#message-content{
+
+  height: 150px;
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+}
+
+

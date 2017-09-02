@@ -1,25 +1,26 @@
-<md-toolbar>
-    <h3>Chating Room</h3>
-</md-toolbar>
+
 <div class="container">
-    <div class="left-wraper">
+  <div class="left-wraper">
     <div class="name">
-      <div><span></span><span id="changeName">修改</span></div>
+      <div (click)="openDialog()"><span>{{name}}</span><span id="changeName">修改</span></div>
     </div>
     <h2>聊天室列表</h2>
-      <ul class="room-list">
-        <li>默认聊天室</li>
-      </ul>
-    </div>
-
-    <div class="message-window">
-      <h2>默认聊天室</h2>
-      <div class="message-list">
-
+      <div *ngFor="let item of roomList" [class]="item.type">
+        <md-card >{{item.room}}</md-card>
       </div>
-      <form id="message-send">
-        <textarea id="message-content" cols="30" rows="7" placeholder="请在此输入消息"></textarea>
-        <input type="submit" value="发送">
-      </form>
+      <button md-raised-button (click)="addRoom()">新建房间</button>
+  </div>
+
+  <div class="message-window">
+    <md-toolbar>
+      <h3>Chating Room</h3>
+    </md-toolbar>
+    <div class="message-list">
+      <p *ngFor="let item of messages" [class]="item.type ">{{item.text}}</p>
+    </div>
+    <div id="message-send">
+      <textarea mdInput id="message-content" [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="请在此输入消息"></textarea>
+      <button md-raised-button (click)="sendMessage()">发送</button>
     </div>
   </div>
+</div>

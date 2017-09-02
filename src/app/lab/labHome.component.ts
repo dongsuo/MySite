@@ -18,6 +18,11 @@ export class LabHomeComponent implements OnInit {
       link:'/authorization/login',
       title:'Login/Register',
       description:'基于NodeJS + Angular4 + Angular Material构建的登录/注册模块'
+    },
+    {
+      link:'/chat',
+      title:'ChatingRoom',
+      description:'聊天室'
     }
   ];
 
