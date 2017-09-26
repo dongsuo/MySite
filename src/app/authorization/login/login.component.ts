@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UserInfo} from '../../user';
-import {UserService} from '../../user.service';
+import {UserInfo} from '../user';
+import {UserService} from '../user.service';
 
 
 
@@ -15,7 +15,7 @@ import {UserService} from '../../user.service';
 })
 export class LoginComponent implements OnInit {
 
-  onSubmit(email,password){
+  onSubmit(email:String,password:String){
     this.userService.loginUser(this.userInfo)
     .then(res=>{
     		console.log(res)

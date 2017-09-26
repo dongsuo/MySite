@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UserInfo} from '../../user';
-import {UserService} from '../../user.service';
+import {UserInfo} from '../user';
+import {UserService} from '../user.service';
 
 
 @Component({
@@ -17,7 +17,7 @@ import {UserService} from '../../user.service';
 
 export class RegisterComponent implements OnInit {
   title="注册";
-	onSubmit(email,password) {
+	onSubmit(email:String,password:String) {
     	// console.log(this.userInfo)
     	this.userService.registerUser(this.userInfo)
     	.then(res=>{

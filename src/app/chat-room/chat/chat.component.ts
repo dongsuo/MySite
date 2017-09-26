@@ -2,7 +2,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MessageService } from "../chat.service";
 import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
-
+import { Response } from "../chatResponse";
 
 @Component({
   selector: 'app-chat',
@@ -10,29 +10,28 @@ import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./chat.component.css'],
   providers: [MessageService]
 })
+
 export class ChatComponent implements OnInit {
-  private chat;
-  private messages = [];
-  private message = '';
-  private name = '';
-  private room = ''
-  private roomList = []
-  // this.messageService.send('hello')
+  public messages:Array<Object> = [];
+  public message = '';
+  public name:String = '';
+  public room:String = ''
+  public roomList:Array<any> = []
+s
   sendMessage() {
     this.messageService.send(this.message)
     this.messages.push({ type: 'self', text: this.message + '：我' })
     this.message = '';
   }
   constructor(private messageService: MessageService, public dialog: MdDialog) {
-    this.chat = this.messageService.chat.subscribe(response => {
-      console.log(response)
+    this.messageService.chat.subscribe((response:Response) => {
       this.messages.push(response)
       if (response.type === 'nameResult') {
         this.name = response.name
       }
       if (response.type === 'joinResult') {
         this.room = response.room
-        this.roomList.map((item)=>{
+        this.roomList.map((item:any)=>{
           if(item.room === this.room){
             item.type = 'active';
             return;
@@ -40,40 +39,31 @@ export class ChatComponent implements OnInit {
         })
       }
       if(response.type ==='roomList'){
-        // console.log(response.data)
-        this.roomList = response.data.map((item)=>{
+        this.roomList = response.data.map((item:String)=>{
           return {room:item,type:'deactive'}
         })
-        console.log(this.room)
-        console.log(this.roomList)
-
-        // this.roomList[this.room].type = 'active'
       }
     })
   }
   addRoom():void{
-    console.log('add')
     let dialogRef = this.dialog.open(NewRoomDialog, {
       width: '600px',
       data: { room: this.room }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // console.log('The dialog was closed');
       if(!result) return false;
       this.messageService.addRoom(result)
     });
 
   }
   openDialog(): void {
-    // console.log('dialog')
     let dialogRef = this.dialog.open(ChangeNameDialog, {
       width: '600px',
       data: { name: this.name }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // console.log('The dialog was closed');
       if(!result) return false;
       this.name = result;
       this.messageService.changeName(result)
@@ -118,8 +108,4 @@ export class NewRoomDialog {
     submitRoom():void{
       this.dialogRef.close();
     }
-  // onNoClick(): void {
-  //   this.dialogRef.close();
-  // }
-
 }

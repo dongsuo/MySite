@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import 'hammerjs';
+// import 'hammerjs';
 
 import { AuthorizationModule } from "./authorization/authorization.module";
 import { ChatRoomModule } from "./chat-room/chat-room.module";
@@ -27,7 +27,6 @@ import { AppRoutingModule } from "./app-router.module";
     ChatRoomModule,
     AppRoutingModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

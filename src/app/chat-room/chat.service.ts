@@ -1,52 +1,47 @@
 
 import { Injectable,NgZone } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/toPromise';
+// import 'rxjs/add/operator/toPromise';
 import * as io from "socket.io-client";
+
+var ioFunc = (io as any).default ? (io as any).default : io;
 
 @Injectable()
 export class MessageService {
-  private url = 'ws://localhost:9527';
+  private url = 'ws://xiaofeixu.cn';
 
   private socket:SocketIOClient.Socket;
   constructor(private ngZone:NgZone) {
     // this.socket = io(this.url)
    }
    chat = new Observable(observer=>{
-    this.socket = io(this.url,{
+    this.socket = ioFunc(this.url,{
       path:'/chat',
       reconnection :true,
       reconnectionAttempts:5
     })
-    this.socket.on('message',message=>{
-      // console.log(message)
+    this.socket.on('message',(message:Object)=>{
       observer.next(message)
     })
-    this.socket.on('joinResult',joinResult=>{
-      console.log(joinResult)
+    this.socket.on('joinResult',(joinResult:Object)=>{
       observer.next(joinResult)
     })
-    this.socket.on('nameResult',nameResult=>{
-      console.log(nameResult)
+    this.socket.on('nameResult',(nameResult:Object)=>{
       observer.next(nameResult)
     })
-    this.socket.on('roomList',(roomList)=>{
-      console.log(roomList)
+    this.socket.on('roomList',(roomList:Object)=>{
       observer.next(roomList)
     })
     this.socket.on('disconnect',()=>{
-      console.log('disconnected')
     })
   })
-   send(message){
-    //  console.log(message)
+   send(message:String){
     this.socket.emit('message',message)
    }
-   changeName(name){
-    //  console.log(name);
+   changeName(name:String){
      this.socket.emit('changeName',name)
    }
-   addRoom(room){
+   addRoom(room:String){
     this.socket.emit('newRoom',room)
    }
 }
