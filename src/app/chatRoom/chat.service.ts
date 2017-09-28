@@ -1,5 +1,5 @@
 
-import { Injectable,NgZone } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/operator/toPromise';
 import * as io from "socket.io-client";
@@ -10,8 +10,8 @@ var ioFunc = (io as any).default ? (io as any).default : io;
 export class MessageService {
   private url = 'ws://xiaofeixu.cn';
 
-  private socket:SocketIOClient.Socket;
-  constructor(private ngZone:NgZone) {
+  private socket:io.Socket;
+  constructor() {
     // this.socket = io(this.url)
    }
    chat = new Observable(observer=>{

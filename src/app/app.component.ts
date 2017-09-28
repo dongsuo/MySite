@@ -3,9 +3,13 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: ['body {height: 100%; width: 100%;color: #fff; }',
-  '.menu{ height: 100%; width: 100%; }']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = '我是徐晓飞，是一名程序员';
+  hide = true;
+	menuList = [
+		{ name: 'Home', url: '' ,target:''},
+		{ name: 'Blog', url: 'http://blog.xiaofeixu.cn',target:'_blank' },
+		{ name: 'AboutMe', url: 'http://blog.xiaofeixu.cn/about/',target:'_blank' }];
+	classArray = ['material-icons'];
 }

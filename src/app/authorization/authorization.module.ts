@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '@angular/material';
+import { HttpModule } from '@angular/http';
+import { MaterialModule } from './../material.module';
 import { ContactRoutingModule } from "./authorization-routing.module";
 
 import { AuthorizationComponent } from "./authorization.component";
@@ -12,6 +13,7 @@ import { RegisterComponent } from "./register/register.component";
   imports: [
     CommonModule,
     FormsModule,
+    HttpModule,
     ContactRoutingModule,
     MaterialModule,
   ],

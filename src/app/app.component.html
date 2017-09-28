@@ -1,3 +1,13 @@
-	<app-menu class="menu"></app-menu>
-
-    <router-outlet></router-outlet>
+<md-sidenav-container class="sidenav-container">
+  <md-sidenav mode="push" #sidenav class="sidenav">
+    <md-nav-list md-nav-list *ngFor="let item of menuList">
+      <a href="{{item.url}}" target="{{item.target}}">{{item.name}}</a>
+    </md-nav-list>
+    <md-nav-list><a routerLink="/magic">Laboratory</a></md-nav-list>
+  </md-sidenav>
+  <div class="sidenav-btn">
+    <i [ngClass]=classArray (click)="sidenav.toggle()">&#xE5D2;</i>
+  </div>
+  <router-outlet>
+  </router-outlet>
+</md-sidenav-container>

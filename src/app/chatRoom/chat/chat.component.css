@@ -10,12 +10,13 @@ a {
 }
 
 
-md-toolbar {
-  background: #3f51b5;
-  color: #fff;
+h3 {
+  margin: 0 auto;
   text-align: center;
-  width: 750px;
-  height: 65px;
+  width: 90%;
+  height: 45px;
+  border-bottom: 1px solid #ccc;
+  line-height: 45px;
 }
 
 #pop-ups {
@@ -30,9 +31,11 @@ md-toolbar {
 
 .container {
   position: relative;
-  width: 950px;
+  width: 1000px;
   height: 100%;
+  min-height: 500px;
   margin: 0 auto;
+
 }
 
 .left-wraper {
@@ -95,6 +98,7 @@ div.active md-card{
   position: relative;
   margin-left: 250px;
   background: #eee;
+  width: 750px;
   /* padding-bottom: 150px; */
   /* overflow-y: scroll; */
 }
@@ -133,7 +137,7 @@ div.active md-card{
 
 #message-send{
   width: 748px;
-  position: fixed;
+  position: absolute;
   font-size:16px;
   height: 150px;
   bottom: 0;

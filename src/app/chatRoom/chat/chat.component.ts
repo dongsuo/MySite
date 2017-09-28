@@ -17,7 +17,7 @@ export class ChatComponent implements OnInit {
   public name:String = '';
   public room:String = ''
   public roomList:Array<any> = []
-s
+
   sendMessage() {
     this.messageService.send(this.message)
     this.messages.push({ type: 'self', text: this.message + '：我' })

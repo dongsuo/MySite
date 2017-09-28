@@ -1,7 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '@angular/material';
+import { MaterialModule } from './../material.module';
 import { FormsModule } from '@angular/forms';
 
 import { ChatComponent,ChangeNameDialog,NewRoomDialog } from './chat/chat.component';
@@ -19,4 +19,4 @@ import { ChatRoutingModule } from "./chat-routing.module";
   entryComponents: [ChangeNameDialog,NewRoomDialog]
 
 })
-export class ChatRoomModule { }
+export class ChatModule { }

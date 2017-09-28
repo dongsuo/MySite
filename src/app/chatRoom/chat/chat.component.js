@@ -18,7 +18,6 @@ var ChatComponent = (function () {
         var _this = this;
         this.messageService = messageService;
         this.dialog = dialog;
-        // public chat:String = '';
         this.messages = [];
         this.message = '';
         this.name = '';
@@ -42,11 +41,9 @@ var ChatComponent = (function () {
                 _this.roomList = response.data.map(function (item) {
                     return { room: item, type: 'deactive' };
                 });
-                // this.roomList[this.room].type = 'active'
             }
         });
     }
-    // this.messageService.send('hello')
     ChatComponent.prototype.sendMessage = function () {
         this.messageService.send(this.message);
         this.messages.push({ type: 'self', text: this.message + '：我' });
