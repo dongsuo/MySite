@@ -6,7 +6,6 @@
   background: #3f51b5;
   cursor: pointer;
   padding: 5px;
-  z-index: 999999;
 }
 
 .sidenav-container {
@@ -17,20 +16,17 @@
   position: absolute;
   display: flex;
   height: 100%;
-  z-index: 9999;
   background:rgba(255, 255, 255, 0.00);
 }
 
 .sidenav{
   position: absolute;
-  background:rgba(255, 255, 255, 0.00);
   padding: 20px;
   width: 200px;
   opacity: 1;
-  z-index: 9999;
 }
 
-md-nav-list{
+mat-drawer-list{
   color: #fff;
   line-height: 35px;
   font-family: Georgia,Schwager,serif;

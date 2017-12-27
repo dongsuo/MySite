@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
   styles:[
     'h3 {width:100%;}',
     'a {color:#000}',
-    'md-toolbar {background:#3f51b5;color:#fff;text-align:center}',
-    'md-card {width:50%;margin: 0 auto;margin-top:20px;position:relative;}',
-    'md-card p {color:#6f6f6f;font-size:0.8rem;}'
+    'mat-toolbar {background:#3f51b5;color:#fff;text-align:center}',
+    'mat-card {width:50%;margin: 0 auto;margin-top:20px;position:relative;}',
+    'mat-card p {color:#6f6f6f;font-size:0.8rem;}'
   ]
 })
 

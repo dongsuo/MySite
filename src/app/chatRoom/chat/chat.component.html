@@ -6,9 +6,9 @@
           </div>
           <h2>聊天室列表</h2>
             <div *ngFor="let item of roomList" [class]="item.type">
-              <md-card >{{item.room}}</md-card>
+              <mat-card >{{item.room}}</mat-card>
             </div>
-            <button md-raised-button (click)="addRoom()">新建房间</button>
+            <button mat-raised-button (click)="addRoom()">新建房间</button>
         </div>
 
         <div class="message-window">
@@ -18,7 +18,7 @@
           </div>
           <div id="message-send">
             <textarea mdInput id="message-content" [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="请在此输入消息"></textarea>
-            <button md-raised-button (click)="sendMessage()">发送</button>
+            <button mat-raised-button (click)="sendMessage()">发送</button>
           </div>
         </div>
       </div>

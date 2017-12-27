@@ -1,7 +1,7 @@
 
 import { Component, OnInit, Inject } from '@angular/core';
 import { MessageService } from "../chat.service";
-import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Response } from "../chatResponse";
 
 @Component({
@@ -23,7 +23,7 @@ export class ChatComponent implements OnInit {
     this.messages.push({ type: 'self', text: this.message + '：我' })
     this.message = '';
   }
-  constructor(private messageService: MessageService, public dialog: MdDialog) {
+  constructor(private messageService: MessageService, public dialog: MatDialog) {
     this.messageService.chat.subscribe((response:Response) => {
       this.messages.push(response)
       if (response.type === 'nameResult') {
@@ -78,15 +78,15 @@ export class ChatComponent implements OnInit {
 
 @Component({
   selector: 'change-name-dialog',
-  template: `<h2 md-dialog-title>修改昵称</h2>
-  <md-input-container><input mdInput tabindex="1" [(ngModel)]="data.name"></md-input-container>
-  <button md-button [md-dialog-close]="data.name"  (click)="submitName" tabindex="2">Ok</button>`,
+  template: `<h2 mat-dialog-title>修改昵称</h2>
+  <mat-input-container><input matInput tabindex="1" [(ngModel)]="data.name"></mat-input-container>
+  <button mat-button [mat-dialog-close]="data.name"  (click)="submitName" tabindex="2">Ok</button>`,
 })
 export class ChangeNameDialog {
 
   constructor(
-    public dialogRef: MdDialogRef<ChangeNameDialog>,
-    @Inject(MD_DIALOG_DATA) public data: any) { }
+    public dialogRef: MatDialogRef<ChangeNameDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
     title = '请输入新昵称'
     submitName():void{
       this.dialogRef.close();
@@ -95,15 +95,15 @@ export class ChangeNameDialog {
 
 @Component({
   selector: 'new-room-dialog',
-  template: `<h2 md-dialog-title>添加房间</h2>
-  <md-input-container><input mdInput tabindex="1" [(ngModel)]="data.room"></md-input-container>
-  <button md-button [md-dialog-close]="data.room"  (click)="submitRoom" tabindex="2">Ok</button>`,
+  template: `<h2 mat-dialog-title>添加房间</h2>
+  <mat-input-container><input matInput tabindex="1" [(ngModel)]="data.room"></mat-input-container>
+  <button mat-button [mat-dialog-close]="data.room"  (click)="submitRoom" tabindex="2">Ok</button>`,
 })
 export class NewRoomDialog {
 
   constructor(
-    public dialogRef: MdDialogRef<NewRoomDialog>,
-    @Inject(MD_DIALOG_DATA) public data: any) { }
+    public dialogRef: MatDialogRef<NewRoomDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
     title = '请输入房间名称'
     submitRoom():void{
       this.dialogRef.close();

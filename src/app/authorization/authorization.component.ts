@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     templateUrl: './authorization.component.html',
     styles:[
-      'md-toolbar {background-color:#3f51b5;font-size:0;}',
+      'mat-toolbar {background-color:#3f51b5;font-size:0;}',
       'nav {border-bottom:none;margin: 0 auto;}',
       'router-outlet {color:#000;}',
       'a {color:#fff;border-bottom:1px solid #fff;}'
