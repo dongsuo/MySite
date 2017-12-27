@@ -1,7 +1,7 @@
 <mat-grid-list cols="5" rowHeight="60px">
-  <mat-grid-tile rowspan='1'></mat-grid-tile>
+  <mat-grid-tile rowspan='2'></mat-grid-tile>
   <mat-grid-tile colspan='5' rowspan='4'>
-    <form #loginForm="ngForm" style="margin: 0 auto;">
+    <form #loginForm="ngForm">
       <mat-input-container>
         <input matInput [(ngModel)]="userInfo.email" name="email" required placeholder="请输入邮箱" type="email">
         <mat-hint>Note:邮箱可用于找回密码</mat-hint>
@@ -12,7 +12,5 @@
       </mat-input-container>
       <button [disabled]="!loginForm.form.valid" mat-raised-button (click)="onSubmit(userInfo.email,userInfo.password); loginForm.reset()">提交</button>
     </form>
-
   </mat-grid-tile>
-
 </mat-grid-list>

@@ -6,7 +6,7 @@ import {UserService} from '../user.service';
 @Component({
   templateUrl: './register.component.html',
   styles:[
-    'mat-grid-tile form{ min-width: 300px;width: 25%;}',
+    'mat-grid-tile form{ width: 300px;}',
     'mat-input-container{width:100%;}',
     'button {width:100%;}'
   ],
