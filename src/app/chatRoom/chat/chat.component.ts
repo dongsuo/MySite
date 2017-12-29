@@ -1,8 +1,9 @@
 
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject,ElementRef } from '@angular/core';
 import { MessageService } from "../chat.service";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Response } from "../chatResponse";
+import { Room } from "../Room";
 
 @Component({
   selector: 'app-chat',
@@ -11,7 +12,11 @@ import { Response } from "../chatResponse";
   providers: [MessageService]
 })
 
-export class ChatComponent implements OnInit {
+// function scrollToBottom(){
+//   this.$refs.terminalWindow.scrollTop = this.$refs.terminalLastLine.offsetTop;
+// }
+
+export class ChatComponent {
   public messages:Array<Object> = [];
   public message = '';
   public name:String = '';
@@ -22,8 +27,43 @@ export class ChatComponent implements OnInit {
     this.messageService.send(this.message)
     this.messages.push({ type: 'self', text: this.message + '：我' })
     this.message = '';
+    setTimeout(() => {
+      const lines = this.el.nativeElement.querySelectorAll('.message-list p')
+      const l = lines.length-1
+      this.el.nativeElement.querySelector('.message-list').scrollTop = lines[l].offsetTop
+    }, 0);
   }
-  constructor(private messageService: MessageService, public dialog: MatDialog) {
+  addRoom():void{
+    let dialogRef = this.dialog.open(NewRoomDialog, {
+      width: '600px',
+      data: { room: this.room }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(!result) return false;
+      this.messageService.addRoom(result)
+    });
+
+  }
+  removeRoom(value):void{
+    this.messageService.removeRoom(value)
+  }
+  openDialog(): void {
+    let dialogRef = this.dialog.open(ChangeNameDialog, {
+      width: '600px',
+      data: { name: this.name }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(!result) return false;
+      this.name = result;
+      this.messageService.changeName(result)
+    });
+  }
+  constructor(
+    private messageService: MessageService,
+    public dialog: MatDialog,
+    private el: ElementRef) {
     this.messageService.chat.subscribe((response:Response) => {
       this.messages.push(response)
       if (response.type === 'nameResult') {
@@ -39,39 +79,12 @@ export class ChatComponent implements OnInit {
         })
       }
       if(response.type ==='roomList'){
-        this.roomList = response.data.map((item:String)=>{
-          return {room:item,type:'deactive'}
+        this.roomList = response.data.map((item:Room)=>{
+          item.type = 'deactive'
+          return item
         })
       }
     })
-  }
-  addRoom():void{
-    let dialogRef = this.dialog.open(NewRoomDialog, {
-      width: '600px',
-      data: { room: this.room }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if(!result) return false;
-      this.messageService.addRoom(result)
-    });
-
-  }
-  openDialog(): void {
-    let dialogRef = this.dialog.open(ChangeNameDialog, {
-      width: '600px',
-      data: { name: this.name }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if(!result) return false;
-      this.name = result;
-      this.messageService.changeName(result)
-    });
-  }
-
-  ngOnInit() {
-
   }
 
 }
@@ -100,7 +113,6 @@ export class ChangeNameDialog {
   <button mat-button [mat-dialog-close]="data.room"  (click)="submitRoom" tabindex="2">Ok</button>`,
 })
 export class NewRoomDialog {
-
   constructor(
     public dialogRef: MatDialogRef<NewRoomDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }

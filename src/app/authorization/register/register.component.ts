@@ -13,8 +13,6 @@ import {UserService} from '../user.service';
   providers: [UserService]
 })
 
-
-
 export class RegisterComponent implements OnInit {
   title="注册";
 	onSubmit(email:String,password:String) {

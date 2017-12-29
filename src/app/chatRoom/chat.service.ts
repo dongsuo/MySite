@@ -8,7 +8,7 @@ var ioFunc = (io as any).default ? (io as any).default : io;
 
 @Injectable()
 export class MessageService {
-  private url = 'ws://xiaofeixu.cn';
+  private url = 'wss://xiaofeixu.cn';
 
   private socket:io.Socket;
   constructor() {
@@ -32,6 +32,10 @@ export class MessageService {
     this.socket.on('roomList',(roomList:Object)=>{
       observer.next(roomList)
     })
+    this.socket.on('roomResult',(roomResult:Object)=>{
+      console.log(roomResult)
+      observer.next(roomResult)
+    })
     this.socket.on('disconnect',()=>{
     })
   })
@@ -43,5 +47,9 @@ export class MessageService {
    }
    addRoom(room:String){
     this.socket.emit('newRoom',room)
+   }
+   removeRoom(room:String){
+     console.log(room)
+    this.socket.emit('removeRoom',room)
    }
 }

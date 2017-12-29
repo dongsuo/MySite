@@ -1,4 +1,4 @@
-<div style="background: #3f51b5;height: 100%;min-height: 500px;overflow: hidden;">
+<div class="ui-container">
     <div class="container">
         <div class="left-wraper">
           <div class="name">
@@ -6,13 +6,16 @@
           </div>
           <h2>聊天室列表</h2>
             <div *ngFor="let item of roomList" [class]="item.type">
-              <mat-card >{{item.room}}</mat-card>
+              <mat-card *ngIf="item.status==='Normal'">
+                {{item.name}}
+                <i class="material-icons" (click)="removeRoom(item)">&#xE5CD;</i>
+              </mat-card>
             </div>
             <button mat-raised-button (click)="addRoom()">新建房间</button>
         </div>
 
         <div class="message-window">
-                  <h3>Chating Room</h3>
+          <h3>Chating Room</h3>
           <div class="message-list">
             <p *ngFor="let item of messages" [class]="item.type ">{{item.text}}</p>
           </div>
