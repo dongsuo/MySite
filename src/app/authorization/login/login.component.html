@@ -1,15 +1,16 @@
 <mat-grid-list cols="5" rowHeight="60px">
   <mat-grid-tile rowspan='2'></mat-grid-tile>
+  <mat-hint>服务器续费中止，接口暂不通</mat-hint>
   <mat-grid-tile colspan='5' rowspan='4'>
     <form #loginForm="ngForm">
-      <mat-input-container>
+      <mat-form-field>
         <input matInput [(ngModel)]="userInfo.email" name="email" required placeholder="请输入邮箱" type="email">
         <mat-hint>Note:邮箱可用于找回密码</mat-hint>
         <mat-error>请输入合法的邮箱地址</mat-error>
-      </mat-input-container>
-      <mat-input-container>
+      </mat-form-field>
+      <mat-form-field>
         <input matInput required [(ngModel)]="userInfo.password" name="password" placeholder="请输入密码" type="password">
-      </mat-input-container>
+      </mat-form-field>
       <button [disabled]="!loginForm.form.valid" mat-raised-button (click)="onSubmit(userInfo.email,userInfo.password); loginForm.reset()">提交</button>
     </form>
   </mat-grid-tile>

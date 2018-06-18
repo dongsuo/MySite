@@ -92,7 +92,7 @@ export class ChatComponent {
 @Component({
   selector: 'change-name-dialog',
   template: `<h2 mat-dialog-title>修改昵称</h2>
-  <mat-input-container><input matInput tabindex="1" [(ngModel)]="data.name"></mat-input-container>
+  <mat-form-field><input matInput tabindex="1" [(ngModel)]="data.name"></mat-form-field>
   <button mat-button [mat-dialog-close]="data.name"  (click)="submitName" tabindex="2">Ok</button>`,
 })
 export class ChangeNameDialog {
@@ -109,7 +109,7 @@ export class ChangeNameDialog {
 @Component({
   selector: 'new-room-dialog',
   template: `<h2 mat-dialog-title>添加房间</h2>
-  <mat-input-container><input matInput tabindex="1" [(ngModel)]="data.room"></mat-input-container>
+  <mat-form-field><input matInput tabindex="1" [(ngModel)]="data.room"></mat-form-field>
   <button mat-button [mat-dialog-close]="data.room"  (click)="submitRoom" tabindex="2">Ok</button>`,
 })
 export class NewRoomDialog {

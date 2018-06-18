@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 // import 'rxjs/add/operator/toPromise';
 import * as io from "socket.io-client";
 

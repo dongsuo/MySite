@@ -1,25 +1,26 @@
 <mat-grid-list cols="5" rowHeight="60px">
   <mat-grid-tile rowspan='2'></mat-grid-tile>
+  <mat-hint>服务器续费中止，接口暂不通</mat-hint>
   <mat-grid-tile colspan='5' rowspan='4'>
     <form #RegisterForm="ngForm">
       <div>
-        <mat-input-container>
+        <mat-form-field>
           <input matInput placeholder="请输入邮箱" class="form-control" [(ngModel)]="userInfo.email" type="email" required name="email" #spy>
 
           <mat-hint>Note:邮箱可用于找回密码</mat-hint>
           <mat-error>请输入合法的邮箱地址</mat-error>
-        </mat-input-container>
+        </mat-form-field>
       </div>
       <div>
-        <mat-input-container>
+        <mat-form-field>
           <input matInput placeholder="请输入密码" class="form-control" [(ngModel)]="userInfo.password" type="password" required name="pwd">
-        </mat-input-container>
+        </mat-form-field>
       </div>
       <div>
-        <mat-input-container>
+        <mat-form-field>
           <input matInput placeholder="请确认密码" class="form-control" [(ngModel)]="userInfo.repassword" type="password" required name="repwd"
             #repwd="ngModel">
-        </mat-input-container>
+        </mat-form-field>
         <div [hidden]="repwd.pristine || userInfo.repassword === userInfo.password">
           两次密码不一致
         </div>

@@ -17,6 +17,7 @@
         <div class="message-window">
           <h3>Chating Room</h3>
           <div class="message-list">
+              <mat-hint>服务器续费中止，接口暂不通</mat-hint>
             <p *ngFor="let item of messages" [class]="item.type ">{{item.text}}</p>
           </div>
           <div id="message-send">

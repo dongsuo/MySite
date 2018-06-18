@@ -2,7 +2,10 @@
     <mat-toolbar>
         <h3>{{title}}</h3>
       </mat-toolbar>
-
+      <mat-card>
+        <a href="http://xiaofeixu.cn/terminal-resume-template/" target="_blank" >vue-terminal-emulator</a>
+        <p>A terminal emulator in Vue</p>
+      </mat-card>
       <mat-card *ngFor="let item of links">
         <a routerLink="{{item.link}}" >{{item.title}}</a>
         <p>{{item.description}}</p>
