@@ -165,4 +165,9 @@ div.active mat-card{
   outline: none;
 }
 
-
+mat-hint {
+  color: #F56C6C;
+  display: block;
+  width: 100%;
+  text-align: center;
+}

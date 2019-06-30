@@ -9,7 +9,7 @@ export class AppComponent {
   hide = true;
 	menuList = [
 		{ name: 'Home', url: '/' ,target:''},
-		{ name: 'Blog', url: 'http://blog.xiaofeixu.cn',target:'_blank' },
-		{ name: 'AboutMe', url: 'http://blog.xiaofeixu.cn/about/',target:'_blank' }];
+		{ name: 'Blog', url: 'https://blog.islasher.com',target:'_blank' },
+		{ name: 'AboutMe', url: 'https://blog.islasher.com/about/',target:'_blank' }];
 	classArray = ['material-icons'];
 }

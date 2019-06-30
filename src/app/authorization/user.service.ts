@@ -4,8 +4,8 @@ import { UserInfo } from './user';
 
 @Injectable()
 export class UserService {
-  private registerUrl = 'http://xiaofeixu.cn/register';
-  private loginUrl = 'http://xiaofeixu.cn/login'
+  private registerUrl = 'https://islasher.com/register';
+  private loginUrl = 'https://islasher.com/login'
   private headers = new Headers({ 'Content-Type': 'text/json' });
   constructor(private http: Http) { };
 

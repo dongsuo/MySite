@@ -7,9 +7,10 @@ import {UserService} from '../user.service';
 @Component({
   templateUrl: './login.component.html',
   styles:[
-    'mat-grid-tile form{ width: 300px;}',
-    'mat-input-container {width:100%;}',
-    'button{width:100%;}'
+    'mat-grid-tile form{ width: 300px;text-align:center;}',
+    'mat-input-container{width:85%;}',
+    'mat-form-field {width: 85%;}',
+    'button {width:85%;}'
   ],
   providers: [UserService]
 })

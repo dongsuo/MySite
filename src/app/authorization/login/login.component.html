@@ -1,7 +1,8 @@
 <mat-grid-list cols="5" rowHeight="60px">
-  <mat-grid-tile rowspan='2'></mat-grid-tile>
-  <mat-hint>服务器续费中止，接口暂不通</mat-hint>
-  <mat-grid-tile colspan='5' rowspan='4'>
+    <mat-grid-tile rowspan='2' colspan="5">
+        <mat-hint style="text-align: center;color: #F56C6C;">服务器续费中止，接口暂不通</mat-hint>
+    </mat-grid-tile>
+    <mat-grid-tile colspan='5' rowspan='4'>
     <form #loginForm="ngForm">
       <mat-form-field>
         <input matInput [(ngModel)]="userInfo.email" name="email" required placeholder="请输入邮箱" type="email">

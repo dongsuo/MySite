@@ -2,11 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   template: ` <div class="home-container">
-  <h1>
-    我是徐晓飞，是一名程序员
-  </h1>
-  <div>Welcome to the real world ! It sucks! You're going to love it !
-    <div>——From 《Friends》</div>
+  <div>
+    <h1> 我是徐晓飞 </h1>
+    <h2>一名斜杠青年工程师</h2>
   </div>
 </div>`,
   styleUrls: ['./home.component.css']
