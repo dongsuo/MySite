@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './../material.module';
-import { ContactRoutingModule } from "./authorization-routing.module";
+import { ContactRoutingModule } from './authorization-routing.module';
 
-import { AuthorizationComponent } from "./authorization.component";
-import { LoginComponent } from "./login/login.component";
-import { RegisterComponent } from "./register/register.component";
+import { AuthorizationComponent } from './authorization.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     ContactRoutingModule,
     MaterialModule,
   ],
