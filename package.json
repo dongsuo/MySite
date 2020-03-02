@@ -26,11 +26,11 @@
     "@schematics/package-update": "^0.6.8",
     "@types/socket.io": "^1.4.34",
     "classlist.js": "^1.1.20150312",
-    "core-js": "^2.5.7",
+    "core-js": "^3.6.4",
     "rxjs": "^6.2.0",
     "tslib": "^1.11.1",
     "web-animations-js": "^2.3.2",
-    "zone.js": "~0.9.1"
+    "zone.js": "^0.10.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.25",
