@@ -1,16 +1,36 @@
-.page-body {
-  max-width: 580px;
+body,div,h1,h2,h3 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.home-page-container {
+  max-width: 720px;
   margin: 0 auto;
   font-size: 14px;
   line-height: 1.5;
   color: #333;
   padding-top: 64px;
+  position: relative;
 }
-
+a,
+a:hover,
+a:visited,
+a:focus {
+  color: #2D37A3;
+  text-decoration: none;
+}
 .page-body h1 {
   font-size: 18px;
 }
 .page-body li {
   display: flex;
   justify-content: space-between;
+}
+
+.lang-switch {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  z-index: 1;
+  font-size: 14px;
 }

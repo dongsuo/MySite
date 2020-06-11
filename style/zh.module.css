@@ -1,0 +1,141 @@
+.zhPageContainer {
+  width: 720px;
+  margin: 0 auto;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.headSection {
+  position: relative;
+  height: 560px;
+  background-image: url('../assets/shape_top_left.png');
+  background-size: 750px auto;
+  background-position: -120px -150px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.headSection h1 {
+  color: #fff;
+  font-size:42px;
+  font-weight:bold;
+  color:rgba(250,247,246,1);
+  margin-top: 85px;
+  margin-left: 42px;
+}
+
+.headSection h2 {
+  color: #fff;
+  font-size:42px;
+  font-weight:bold;
+  color:rgba(250,247,246,1);
+  margin-top: 16px;
+  margin-left: 42px;
+}
+
+.head-illustration {
+  position: absolute;
+  background-image: url('../assets/head_illustration.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 353.5px;
+  height: 242.5px;
+  right: 48px;
+  bottom: 150px;
+}
+
+.selfIntro {
+  height: 400px;
+  background-image: url('../assets/right_middle.png');
+  background-size: auto 393px;
+  background-repeat: no-repeat;
+  background-position: 210% 50%;
+}
+.selfIntro p {
+  margin-top: 32px;
+}
+.selfIntro h3, .selfIntro p{
+  width: 366px;
+  font-size:14px;
+  font-weight:400;
+  color:#262626;
+  line-height:24px;
+  margin-left: 87.5px;
+}
+
+.selfIntro h3 {
+  padding-top: 40px;
+  font-size:18px;
+  font-weight:800;
+  color:rgba(45,55,163,1);
+  text-decoration: underline;
+  text-decoration-color: rgba(45,55,163,1);
+}
+
+.likesSection {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  padding-left: 280px;
+  padding-right: 42px;
+  padding-top: 64px;
+  background-image: url('../assets/shape_left_bottom.png');
+  background-repeat: no-repeat;
+  background-size: auto 467px;
+  background-position: -450px -100px;
+}
+.likesSection h3, .likesSection p {
+  font-size:14px;
+  font-weight:400;
+  color:#262626;
+  line-height:24px;
+}
+.likesSection h3{
+  font-size:25px;
+  font-weight:800;
+  color:rgba(45,55,163,1);
+}
+
+.likesSection .likesSectionBody {
+  margin-top: 24px;
+  border:1px solid #dbdcee;
+  padding: 24px 12px;
+}
+
+.decorationPoints {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: url('../assets/points.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  right: 0;
+  bottom: 30px;
+}
+
+.aboutDream {
+  font-size:14px;
+  font-weight:800;
+  color:rgba(45,55,163,1);
+  line-height:18px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.myWorks {
+  margin: 53px 84px 58.5px 84px;
+  font-size:14px;
+  font-weight:400;
+  color:rgba(38,38,38,1);
+  line-height:14px;
+  word-wrap: break;
+}
+
+.bottomShape {
+  background-image: url('../assets/shape_bottom.png');
+  background-position: -90px 50px;
+  background-size: 1180px 165px;
+  background-repeat: no-repeat;
+  height: 165px;
+}
