@@ -37,16 +37,10 @@ const IndexPage = () => (
         He mainly works as a frontend programmer, but he has a passion for building elegant product.
       </p>
       <p>Here is some of his works:</p>
-      <ul>
-        <li>
-          <a href="https://vislib.best" target="_blank">vue-data-board: A Data Analysis Board in Vue.</a>
-          <GitHubButton href="https://github.com/dongsuo/vue-data-board" data-show-count aria-label="Star dongsuo/vue-data-board on GitHub">Star</GitHubButton>
-        </li>
-        <li>
-          <a href="https://islasher.com/vue-terminal/" target="_blank">vue-terminal: A terminal emulator in Vue. </a>
-          <GitHubButton href="https://github.com/dongsuo/vue-terminal" data-show-count aria-label="Star dongsuo/vue-terminal on GitHub">Star</GitHubButton>
-        </li>
-      </ul>
+      
+      <div className="repo-card" data-repo="dongsuo/vue-data-board"></div>
+      <div className="repo-card" data-repo="dongsuo/vue-terminal"></div>
+
       <p>He also has a <a href="https://blog.islasher.com">blog</a>. </p>
       <p>You can find him here:</p>
       <GitHubButton href="https://github.com/dongsuo" aria-label="Follow @dongsuo on GitHub">

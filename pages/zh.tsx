@@ -52,25 +52,18 @@ const IndexPage = () => (
       <div className={styles.myWorks}>
 
       <p>这是我的一些作品:</p>
-        <ul>
-          <li>
-            <a href="https://vislib.best" target="_blank">vue-data-board: 一个 BI 数据分析平台.</a>
-            <GitHubButton href="https://github.com/dongsuo/vue-data-board" data-show-count aria-label="Star dongsuo/vue-data-board on GitHub">Star</GitHubButton>
-          </li>
-          <li>
-            <a href="https://islasher.com/vue-terminal/" target="_blank">vue-terminal:  一个运行在浏览器中的 terminal. </a>
-            <GitHubButton href="https://github.com/dongsuo/vue-terminal" data-show-count aria-label="Star dongsuo/vue-terminal on GitHub">Star</GitHubButton>
-          </li>
-        </ul>
+      <div className="repo-card" data-repo="dongsuo/vue-data-board"></div>
+      <div className="repo-card" data-repo="dongsuo/vue-terminal"></div>
         <p> 我还有一个 <a href="https://blog.islasher.com">博客</a>. </p>
         <p>你可以在这里找到我:</p>
           <GitHubButton href="https://github.com/dongsuo" aria-label="Follow @dongsuo on GitHub"> @dongsuo</GitHubButton>
         <p>
           如果你对我或者我的作品感兴趣，想跟我聊聊，欢迎你发邮件给我：
-          <a href="mailto:xuxiaofei915@gmail.com">xuxiaofei915@gmail.com</a>, 我不善社交，但是我会回复你的.</p>
-        </div>
-        <div className={styles.bottomShape}></div>
+          <a href="mailto:xuxiaofei915@gmail.com">xuxiaofei915@gmail.com</a>, 我不善社交，但是我会回复你的.
+        </p>
       </div>
+      <div className={styles.bottomShape}></div>
+    </div>
   </Layout>
 )
 
